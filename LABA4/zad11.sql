@@ -1,0 +1,33 @@
+use UNIVER;
+    select a.AUDITORIUM
+    FROM AUDITORIUM a
+except
+    (
+	select a.AUDITORIUM
+    from TIMETABLE T1, AUDITORIUM a
+    where T1.LESSON = 1 and a.AUDITORIUM = T1.AUDITORIUM
+    );
+    select AUDITORIUM
+    from AUDITORIUM a
+except
+    (
+	select a.AUDITORIUM
+    from TIMETABLE T1, AUDITORIUM a
+    where T1.DAY_NAME = 'пн' and a.AUDITORIUM = T1.AUDITORIUM
+);
+    select distinct T.TEACHER_NAME, T1.DAY_NAME, T1.LESSON
+    from TEACHER T, TIMETABLE T1, TIMETABLE T2
+except
+    (
+	select distinct T.TEACHER_NAME, T1.DAY_NAME, T1.LESSON
+    from TEACHER T, TIMETABLE T1, TIMETABLE T2
+    where T.TEACHER = T1.TEACHER and T1.DAY_NAME = T2.DAY_NAME and T1.LESSON != T2.LESSON
+);
+    select distinct G.IDGROUP, T1.DAY_NAME, T1.LESSON
+    from GROUPS G, TIMETABLE T1, TIMETABLE T2
+except
+    (
+	select distinct G.IDGROUP, T1.DAY_NAME, T1.LESSON
+    from GROUPS G, TIMETABLE T1, TIMETABLE T2
+    where G.IDGROUP = T1.IDGROUP and T1.DAY_NAME = T2.DAY_NAME and T1.LESSON != T2.LESSON)
+order by G.IDGROUP, T1.DAY_NAME desc, T1.LESSON;

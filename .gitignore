@@ -1,0 +1,8 @@
+*.mdf
+*.log
+.vscode
+LABA3/BD/ZDA_myBase_fg1-1.ndf
+LABA3/BD/ZDA_myBase_fg1-2.ndf
+LABA3/BD/ZDA_myBase_log.ldf
+LABA3/BD/ZDA_myBase_ndf.ndf
+requests (2).sql
