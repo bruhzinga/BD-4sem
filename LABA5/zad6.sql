@@ -1,3 +1,4 @@
+use UNIVER;
 select top(1)
     (select avg(P.NOTE)
     from PROGRESS P
@@ -8,4 +9,3 @@ select top(1)
     (select avg(P.NOTE)
     from PROGRESS P
     WHERE P.SUBJECT='СУБД' ) [СУБД]
-from PROGRESS;

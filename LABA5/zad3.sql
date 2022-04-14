@@ -1,3 +1,4 @@
+use UNIVER;
 SELECT distinct PULPIT.PULPIT_NAME as 'Кафедра', FACULTY_NAME as 'Факультет'
 FROM PULPIT
     inner join PROFESSION

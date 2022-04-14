@@ -1,4 +1,5 @@
 ---- Все студенты у которых наиболее высокие оценки
+use UNIVER;
 SELECT P.IDSTUDENT, P.SUBJECT, P.NOTE
 From PROGRESS P
 where P.IDSTUDENT IN(

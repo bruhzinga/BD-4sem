@@ -2,7 +2,7 @@
 --(столбец AUDITORI-UM_CAPACITY) для каждого типа ауди-тории (AUDITORIUM_TYPE).
 --При этом результат следует отсортировать в поряд-ке убывания вместимости. 
 --Примечание: использовать коррелируемый подзапрос c секциями TOP и ORDER BY. 
-
+use UNIVER;
 SELECT a.AUDITORIUM_TYPE, a.AUDITORIUM_CAPACITY
 From AUDITORIUM a
 WHERE a.AUDITORIUM_CAPACITY = (

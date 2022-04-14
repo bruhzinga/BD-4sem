@@ -1,3 +1,4 @@
+use UNIVER;
 SELECT PULPIT.PULPIT_NAME as 'Кафедра', FACULTY_NAME as 'Факультет'
 from PULPIT inner join FACULTY
     on PULPIT.FACULTY = FACULTY.FACULTY
