@@ -1,5 +1,5 @@
 use UNIVER;
-select G.PROFESSION[Специальность], round(AVG(CAST(P.NOTE as float(4))), 2) [Средний]
+select G.PROFESSION[Специальность], F.FACULTY,P.SUBJECT ,round(AVG(CAST(P.NOTE as float(4))), 2) [Средний]
 From FACULTY F
          inner join GROUPS G on F.FACULTY = G.FACULTY
          inner join STUDENT S on G.IDGROUP = S.IDGROUP

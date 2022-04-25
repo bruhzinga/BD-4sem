@@ -1,4 +1,4 @@
-use UNIVER;
+ use UNIVER;
 SELECT	GROUPS.FACULTY [Факультет],
 		GROUPS.PROFESSION [Специальность],
 		PROGRESS.SUBJECT [Предмет],
