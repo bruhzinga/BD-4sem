@@ -1,0 +1,17 @@
+use UNIVER;
+DECLARE @CAPACITY INT = (SELECT SUM(AUDITORIUM.AUDITORIUM_CAPACITY) FROM AUDITORIUM),
+@AVERAGECAPACITY INT = (SELECT AVG(AUDITORIUM.AUDITORIUM_CAPACITY) FROM AUDITORIUM)
+IF @CAPACITY > 200
+	BEGIN
+		declare		@quantity int = (SELECT COUNT(AUDITORIUM) from AUDITORIUM),
+					@select1 int = (SELECT COUNT(AUDITORIUM) FROM  AUDITORIUM WHERE AUDITORIUM_CAPACITY < @AVERAGECAPACITY)
+
+	    SELECT	@quantity [Количество аудиторий],
+				@AVERAGECAPACITY [Средняя вместимость],
+				@select1 [Количество адуторий с вместимостью меньше среднего],
+				@select1 * 100 / @quantity [%]
+	END
+ELSE
+	BEGIN
+		PRINT @CAPACITY
+	END;

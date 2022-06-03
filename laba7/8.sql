@@ -4,9 +4,9 @@ create view [Расписание]
     as select top(50) [day], [lesson], [1 group], [2 group], [3 group], [4 group]
     from (
          select top(50) DAY_NAME [day],
-                        convert(varchar, LESSON) [lesson],
+                        LESSON [lesson],
                         convert(varchar, IDGROUP) + ' group' [group],
-                        SUBJECT + ' ' + AUDITORIUM [discipline]
+                        SUBJECT[discipline]
          from TIMETABLE
              ) tb1
     pivot (
@@ -21,4 +21,5 @@ create view [Расписание]
             when [day] like N'ср' then 3
         end), [lesson]
 
+use UNIVER;
 select * from [Расписание]
