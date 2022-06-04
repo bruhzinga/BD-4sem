@@ -26,6 +26,8 @@ end catch;
 
 -- удалить процедуру:
 drop procedure PAUDITORIUM_INSERT;
+go
+
 
 DECLARE @rc int;
 exec @rc=PAUDITORIUM_INSERT @a='500-1', @n='ЛК', @c=60, @t='500-1';

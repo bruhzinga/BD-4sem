@@ -36,6 +36,8 @@ end;
 DECLARE @k3 int;
 EXEC @k3 = PAUDITORIUM_INSERTX '652-3', @n = 'КГ', @c = 85, @t = '652-3', @tn = 'Комп. класс НОВЫЙ!!!';
 print 'Код ошибки: ' + cast(@k3 as varchar(3));
+    go
+
 
 select * from AUDITORIUM;
 select * from AUDITORIUM_TYPE;
