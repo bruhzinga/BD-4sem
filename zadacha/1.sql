@@ -16,7 +16,7 @@ as
 			while (@@FETCH_STATUS = 0)
 				begin
 					set @grade_list = rtrim(@grade) + ', ' + @grade_list;
-					--set @rc += 1;		--шаг
+
 					fetch GRADES into @grade;
 				end;
 			print 'Дисциплины на кафедре ' + rtrim(@kafedra) + ':';

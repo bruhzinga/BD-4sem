@@ -15,6 +15,8 @@ set @c=@@ROWCOUNT;
 return @k;
 end;
 
+drop procedure PSUBJECT;
+
 declare @temp_2 int = 0, @out_2 int = 0;
 exec @temp_2 = PSUBJECT 'ИСиТ', @out_2 output;
 print 'Дисциплин всего: ' + convert(varchar, @temp_2);

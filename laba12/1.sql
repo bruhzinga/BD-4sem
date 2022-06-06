@@ -12,7 +12,7 @@ select SUBJECT [КОД], SUBJECT_NAME [ДИСЦИПЛИНА], PULPIT [КАФЕД
 return @k;
 end;
 --DROP procedure PSUBJECT;
-go
+
 declare @i int=0;
 exec @i=PSUBJECT;
 print 'Количество предметов: '+cast(@i as varchar(3));
